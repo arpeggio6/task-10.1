@@ -1,7 +1,7 @@
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
 	draggable: true,
-	// freeScroll: true,
+	hash: true,
 	pageDots: false,
   	cellAlign: 'center',
   	contain: true
@@ -14,12 +14,6 @@ restartButton.addEventListener('click', function(){
 });
 
 var slideButtons = document.getElementsByTagName('a');
-
-for (var i = 0; i < slideButtons.length; i++) {
-	slideButtons[i].addEventListener('click', function () {
-		flkty.select(this.getAttribute('id'));
-	})
-}
 
 var progressBar = document.querySelector('.progress-bar')
 

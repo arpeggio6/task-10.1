@@ -36,14 +36,21 @@ window.initMap = function() {
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: uluru, map: map});
 
-  data.forEach(function(slide, i){
-	console.log(container[i]);
-	container[i].innerHTML = Mustache.render(template, slide);
-	cell[i].style.backgroundImage  = 'url('+ slide.image + ')';
-	var marker = [];
+	data.forEach(function(slide, i){
+		container[i].innerHTML = Mustache.render(template, slide);
+		cell[i].style.backgroundImage  = 'url('+ slide.image + ')';
+	  	var marker = [];
 		marker[i] = new google.maps.Marker({
-		position: slide.coords,
-		map: map
-	});
-})
+			position: slide.coords,
+			map: map
+		});
+		marker[i].addListener('click', function(){
+			event.preventDefault();
+			flkty.select( i );
+		});	
+		
+		flkty.on( 'change', function( index ) {
+			map.panTo(data[index].coords)
+		});
+	})
 }

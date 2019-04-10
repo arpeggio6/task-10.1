@@ -1,3 +1,7 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 .main-carousel {
 	height: 50vh;
 	min-height: 250px;
@@ -9,7 +13,7 @@
   background-size: cover;
 }
 .container {
-	font-size: 20px;
+	font-size: 18px;
 	color: white;
 	text-shadow: 2px 2px 5px #333;
 	width: 50%;
@@ -27,10 +31,11 @@
 	margin: 0 auto;
 	width: 550px;
 	a {
+		color: #333;
 		text-decoration: none;
 		display: block;
 		float: left;
-		margin: 20px;
+		margin: 10px 20px;
 		padding: 10px;
 		border: 2px solid;
 		border-radius: 5px;

@@ -1,7 +1,10 @@
 var template = document.getElementById('template').innerHTML;
 Mustache.parse(template);
-var cell = document.getElementsByClassName('carousel-cell');
-var container = document.getElementsByClassName('container');
+var mainCarousel = document.querySelector('.main-carousel');
+
+data.forEach(function(slide, i){
+	mainCarousel.innerHTML += Mustache.render(template, slide);
+});
 
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
@@ -20,7 +23,7 @@ restartButton.addEventListener('click', function(){
 
 var slideButtons = document.getElementsByTagName('a');
 
-var progressBar = document.querySelector('.progress-bar')
+var progressBar = document.querySelector('.progress-bar');
 
 flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
@@ -33,17 +36,12 @@ window.initMap = function() {
   // The map, centered at Uluru
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 10, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-
-  data.forEach(function(slide, i){
-	console.log(container[i]);
-	container[i].innerHTML = Mustache.render(template, slide);
-	cell[i].style.backgroundImage  = 'url('+ slide.image + ')';
-	var marker = [];
+ 
+	data.forEach(function(slide, i){
+		var marker = [];
 		marker[i] = new google.maps.Marker({
-		position: slide.coords,
-		map: map
-	});
-})
+			position: slide.coords,
+			map: map
+		});
+	})
 }

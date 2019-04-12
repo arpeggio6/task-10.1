@@ -1,15 +1,10 @@
 var template = document.getElementById('template').innerHTML;
 Mustache.parse(template);
-
-var cell = document.getElementsByClassName('carousel-cell');
-var container = document.getElementsByClassName('container');
+var mainCarousel = document.querySelector('.main-carousel');
 
 data.forEach(function(slide, i){
-	var mainCarousel = document.getElementsByClassName('main-carousel')[0];
-
 	mainCarousel.innerHTML += Mustache.render(template, slide);
 })
-
 
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {

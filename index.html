@@ -9,23 +9,7 @@
 	<title>Task 10</title>
 </head>
 <body>
-	<div class="main-carousel">
-	  <div class="carousel-cell" id="carousel-cell1">
-		<div class="container"></div>
-	  </div>
-	  <div class="carousel-cell" id="carousel-cell2">
-		<div class="container"></div>
-	  </div>
-	  <div class="carousel-cell" id="carousel-cell3">
-		<div class="container"></div>
-	  </div>
-	  <div class="carousel-cell" id="carousel-cell4">
-		<div class="container"></div>
-	  </div>
-	  <div class="carousel-cell" id="carousel-cell5">
-		<div class="container"></div>
-	  </div>
-	</div>
+	<div class="main-carousel"></div>
 
 	<div class="progress-bar"></div>
 
@@ -40,39 +24,46 @@
 	<div id="map"></div>
 
 	<script id="template" type="x-tmpl-mustache">
-		<h2>{{title}}</h2>
-		{{{description}}}
-		
-		
+		<div class="carousel-cell" id="{{id}}" style="background-image: url({{image}})">
+			<div class="container">
+				<h2>{{title}}</h2>
+				{{{description}}}
+			</div>
+		</div>
 	</script> 
 
 	<script>
 		var data = [
 			{
+				id: 'carousel-cell1',
 				coords: {lat: 51.107713, lng: 17.032452},
 				image: "https://unsplash.it/g/1200/400",
 				title: 'Slide 1', 
 				description: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar metus sit amet nibh consequat interdum. Morbi eu lacinia erat. Nullam magna libero, vehicula a pulvinar in, mattis sed erat. Suspendisse non massa varius, dapibus ante non, congue ipsum. Aenean sit amet ligula tristique, euismod tortor sit amet, sagittis lectus. Vivamus vitae justo ut nulla pellentesque posuere vel at mauris. Curabitur cursus eu erat a porttitor. Sed vel convallis dui. Praesent id ex lobortis, dapibus libero quis, egestas enim.</p>'
 			},
 			{
+				id: 'carousel-cell2',
 				coords: {lat: 52.229470, lng: 21.008172},
 				image: "https://unsplash.it/1200/400",
 				title: 'Slide 2', 
 				description: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar metus sit amet nibh consequat interdum. Morbi eu lacinia erat. Nullam magna libero, vehicula a pulvinar in, mattis sed erat. Suspendisse non massa varius, dapibus ante non, congue ipsum. Aenean sit amet ligula tristique, euismod tortor sit amet, sagittis lectus. Vivamus vitae justo ut nulla pellentesque posuere vel at mauris. Curabitur cursus eu erat a porttitor. Sed vel convallis dui. Praesent id ex lobortis, dapibus libero quis, egestas enim.</p>'
 			},
 			{
+				id: 'carousel-cell3',
 				coords: {lat: 52.407459, lng: 16.922980},
 				image: "https://unsplash.it/g/1200/390",
 				title: 'Slide 3', 
 				description: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar metus sit amet nibh consequat interdum. Morbi eu lacinia erat. Nullam magna libero, vehicula a pulvinar in, mattis sed erat. Suspendisse non massa varius, dapibus ante non, congue ipsum. Aenean sit amet ligula tristique, euismod tortor sit amet, sagittis lectus. Vivamus vitae justo ut nulla pellentesque posuere vel at mauris. Curabitur cursus eu erat a porttitor. Sed vel convallis dui. Praesent id ex lobortis, dapibus libero quis, egestas enim.</p>'
 			},
 			{
+				id: 'carousel-cell4',
 				coords: {lat: 50.062089, lng: 19.941031},
 				image: "https://unsplash.it/1200/390",
 				title: 'Slide 4', 
 				description: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar metus sit amet nibh consequat interdum. Morbi eu lacinia erat. Nullam magna libero, vehicula a pulvinar in, mattis sed erat. Suspendisse non massa varius, dapibus ante non, congue ipsum. Aenean sit amet ligula tristique, euismod tortor sit amet, sagittis lectus. Vivamus vitae justo ut nulla pellentesque posuere vel at mauris. Curabitur cursus eu erat a porttitor. Sed vel convallis dui. Praesent id ex lobortis, dapibus libero quis, egestas enim.</p>'
 			},
 			{
+				id: 'carousel-cell5',
 				coords: {lat: 54.35216, lng: 18.643995},
 				image: "https://unsplash.it/1200/380",
 				title: 'Slide 5', 
